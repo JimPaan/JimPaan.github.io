@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Route Selection</title>
+</head>
+<body>
+<div>
+    {% for item in data %}
+    <h1>
+        <a href="stops/{{item.route_id}}" style="text-decoration: none; color: #000080">Route id: {{item.route_id}}</a>
+    </h1>
+    <p>Name: {{item.name}}</p>
+    <p>Description: {{item.desc}}</p>
+    <p>Colour: {{item.map_color}}</p>
+    <p>Route: {{item.display_name}}</p>
+    <p>Total bus: {{item.total_bus}}</p>
+    <p>Total bus active: {{item.total_bus_active}}</p>
+    <p>Route information: {{item.message_bus}}</p>
+    <p>Schedule:</p>
+    <img src="{{item.schedule_file}}">
+    {% endfor%}
+</div>
+  </body>
+</html>
